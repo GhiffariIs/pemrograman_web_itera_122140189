@@ -3,100 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List</title>
+    <title>Todo List App</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             max-width: 600px;
             margin: 20px auto;
-            padding: 20px;
+            padding: 0 20px;
         }
-        .todo-container {
-            background-color: #f5f5f5;
-            padding: 20px;
+        .todo-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f0f0f0;
             border-radius: 5px;
         }
-        .input-section {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        #taskInput {
-            flex: 1;
-            padding: 8px;
-        }
-        button {
-            padding: 8px 15px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        .task {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: white;
-            padding: 10px;
-            margin: 5px 0;
-            border-radius: 3px;
-        }
-        .completed {
+        .done {
             text-decoration: line-through;
             opacity: 0.7;
+        }
+        .delete-btn {
+            margin-left: auto;
+            color: red;
+            border: none;
+            background: none;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <div class="todo-container">
-        <h1>To-Do List</h1>
-        <div class="input-section">
-            <input type="text" id="taskInput" placeholder="Enter a new task">
-            <button onclick="addTask()">Add Task</button>
-        </div>
-        <div id="taskList"></div>
+    <h1>Todo List</h1>
+    <div>
+        <input type="text" id="todoInput" placeholder="Add new task...">
+        <button onclick="addTodo()">Add</button>
     </div>
+    <div id="todoList"></div>
 
     <script>
-        function addTask() {
-            const taskInput = document.getElementById('taskInput');
-            const taskList = document.getElementById('taskList');
-            
-            if (taskInput.value.trim() === '') return;
+        let todos = JSON.parse(localStorage.getItem('todos')) || [];
 
-            const taskDiv = document.createElement('div');
-            taskDiv.className = 'task';
-            
-            const taskText = document.createElement('span');
-            taskText.textContent = taskInput.value;
-            
-            const buttonGroup = document.createElement('div');
-            
-            const completeButton = document.createElement('button');
-            completeButton.textContent = '✓';
-            completeButton.onclick = () => taskText.classList.toggle('completed');
-            
-            const deleteButton = document.createElement('button');
-            deleteButton.textContent = '×';
-            deleteButton.onclick = () => taskDiv.remove();
-
-            buttonGroup.appendChild(completeButton);
-            buttonGroup.appendChild(deleteButton);
-            
-            taskDiv.appendChild(taskText);
-            taskDiv.appendChild(buttonGroup);
-            
-            taskList.appendChild(taskDiv);
-            taskInput.value = '';
+        function saveTodos() {
+            localStorage.setItem('todos', JSON.stringify(todos));
         }
 
-        // Allow adding tasks with Enter key
-        document.getElementById('taskInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                addTask();
+        function renderTodos() {
+            const todoList = document.getElementById('todoList');
+            todoList.innerHTML = '';
+            
+            todos.forEach((todo, index) => {
+                const todoDiv = document.createElement('div');
+                todoDiv.className = 'todo-item';
+                if (todo.done) todoDiv.classList.add('done');
+
+                todoDiv.innerHTML = `
+                    <input type="checkbox" ${todo.done ? 'checked' : ''} 
+                        onchange="toggleTodo(${index})">
+                    <span>${todo.text}</span>
+                    <button class="delete-btn" onclick="deleteTodo(${index})">×</button>
+                `;
+                
+                todoList.appendChild(todoDiv);
+            });
+        }
+
+        function addTodo() {
+            const input = document.getElementById('todoInput');
+            const text = input.value.trim();
+            
+            if (text) {
+                todos.push({ text, done: false });
+                input.value = '';
+                saveTodos();
+                renderTodos();
             }
-        });
+        }
+
+        function toggleTodo(index) {
+            todos[index].done = !todos[index].done;
+            saveTodos();
+            renderTodos();
+        }
+
+        function deleteTodo(index) {
+            todos.splice(index, 1);
+            saveTodos();
+            renderTodos();
+        }
+
+        // Initial render
+        renderTodos();
     </script>
 </body>
 </html></html>

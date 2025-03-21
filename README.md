@@ -9,9 +9,10 @@ Berikut adalah struktur direktori dalam repository:
 ```
 📂 repository-root
  ├── 📄 index.html  (Halaman utama)
- ├── 📂 latihan     (Berisi latihan praktikum)
- ├── 📂 tugas       (Berisi tugas praktikum)
- ├── 📂 assets      (Berisi gambar, CSS, atau file pendukung lainnya)
+ ├── 📂 pertemuan1    (Berisi latihan dan tugas pertemuan praktikum)
+ ├──── 📂 tugas       (Berisi tugas praktikum)
+ ├──── 📂 latihan     (Berisi latihan praktikum)
+ ├── 📂 assets      (Berisi gambar, CSS, atau file pendukung lainnya) (menyusul)
  ├── 📄 README.md   (Dokumentasi repository)
 ```
 
@@ -30,5 +31,5 @@ Harap diperhatikan bahwa halaman utama dari repository ini adalah `index.html`, 
 Jika ada pertanyaan atau masukan, silakan hubungi melalui email atau platform yang relevan.
 
 ---
-**© 2025 Nama Anda**
+**© 2025 Muhammad Ghiffari Iskandar**
 

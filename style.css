@@ -1,35 +1,65 @@
 body {
-    font-family: Helvetica, sans-serif;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 0 20px;
-}
-.todo-item {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
-}
-.done {
-    text-decoration: line-through;
-    opacity: 0.7;
-}
-.delete-btn {
-    margin-left: auto;
-    color: red;
-    border: none;
-    background: none;
-    cursor: pointer;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    color: #333;
 }
 
-/* Frame utama untuk konten */
+h1, h2 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 1.3em;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+}
+
 .frame {
-    background-color: white; /* Warna latar belakang konten */
-    width: 80%;
-    max-width: 800px;
-    padding: 20px;
-    border-radius: 15px; /* Membuat sudut membulat */
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15); /* Efek shadow yang lembut */
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    color: #3498db;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 25px 0;
 }

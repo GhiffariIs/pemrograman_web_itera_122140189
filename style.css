@@ -1,0 +1,35 @@
+body {
+    font-family: Helvetica, sans-serif;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+.todo-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+.done {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+.delete-btn {
+    margin-left: auto;
+    color: red;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Frame utama untuk konten */
+.frame {
+    background-color: white; /* Warna latar belakang konten */
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 15px; /* Membuat sudut membulat */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15); /* Efek shadow yang lembut */
+}

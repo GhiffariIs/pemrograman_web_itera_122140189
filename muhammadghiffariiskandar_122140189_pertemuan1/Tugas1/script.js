@@ -1,47 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List App</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        .todo-item {
-            display: flex;
-            align-items: center;
-            margin: 10px 0;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border-radius: 5px;
-        }
-        .done {
-            text-decoration: line-through;
-            opacity: 0.7;
-        }
-        .delete-btn {
-            margin-left: auto;
-            color: red;
-            border: none;
-            background: none;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <h1>Todo List</h1>
-    <div>
-        <input type="text" id="todoInput" placeholder="Add new task...">
-        <button onclick="addTodo()">Add</button>
-    </div>
-    <div id="todoList"></div>
-
-    <script>
-        let todos = JSON.parse(localStorage.getItem('todos')) || [];
+let todos = JSON.parse(localStorage.getItem('todos')) || [];
 
         function saveTodos() {
             localStorage.setItem('todos', JSON.stringify(todos));
@@ -93,6 +50,3 @@
 
         // Initial render
         renderTodos();
-    </script>
-</body>
-</html></html>

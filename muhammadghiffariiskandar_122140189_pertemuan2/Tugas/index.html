@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Jadwal Kuliah</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../../index.html" class="back-button">Kembali</a>
+            <h1>Dashboard Jadwal Kuliah</h1>
+            <div class="theme-toggle">
+                <button id="themeBtn"><i class="fas fa-moon"></i></button>
+            </div>
+        </header>
+
+        <div class="controls">
+            <div class="input-group">
+                <input type="text" id="matkulInput" placeholder="Nama Mata Kuliah">
+                <input type="text" id="dosenInput" placeholder="Nama Dosen">
+                <input type="text" id="ruangInput" placeholder="Ruang">
+                <select id="hariInput">
+                    <option value="Senin">Senin</option>
+                    <option value="Selasa">Selasa</option>
+                    <option value="Rabu">Rabu</option>
+                    <option value="Kamis">Kamis</option>
+                    <option value="Jumat">Jumat</option>
+                    <option value="Sabtu">Sabtu</option>
+                </select>
+                <input type="time" id="waktuInput">
+            </div>
+            <button id="addBtn">Tambah Mata Kuliah</button>
+        </div>
+
+        <div class="schedule-container">
+            <div class="days-container">
+                <!-- Hari akan diisi oleh JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

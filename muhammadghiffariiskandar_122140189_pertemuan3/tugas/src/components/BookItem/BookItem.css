@@ -1,0 +1,64 @@
+.book-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .book-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+  }
+  
+  .book-title {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--text-color);
+  }
+  
+  .book-status {
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  .book-author {
+    margin: 0.5rem 0 1rem;
+    color: var(--text-color);
+    opacity: 0.8;
+  }
+  
+  .book-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: auto;
+  }
+  
+  .btn {
+    padding: 0.3rem 0.6rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+  
+  .edit-btn {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .edit-btn:hover {
+    background-color: var(--primary-hover);
+  }
+  
+  .delete-btn {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c0392b;
+  }

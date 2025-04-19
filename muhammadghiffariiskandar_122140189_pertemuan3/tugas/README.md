@@ -13,13 +13,13 @@ Aplikasi React untuk mengelola koleksi buku pribadi Anda, memungkinkan untuk mel
 
 ## Tangkapan Layar
 
-![Halaman Utama](/images/HomePage.PNG)
+![Halaman Utama](images/HomePage.PNG)
 *Halaman utama menampilkan koleksi buku*
 
-![Form Tambah Buku](/images/AddBookForm.PNG)
+![Form Tambah Buku](images/AddBookForm.PNG)
 *Menambahkan buku baru ke koleksi*
 
-![Halaman Statistik](/images/StatistikPage.PNG)
+![Halaman Statistik](images/StatistikPage.PNG)
 *Statistik tentang koleksi buku Anda*
 
 ## Instalasi dan Pengaturan
@@ -118,4 +118,4 @@ Berikut adalah hasil dari pengujian unit menggunakan Vitest dan React Testing Li
   - Pesan "Tidak ada buku ditemukan" muncul saat tidak ada buku yang sesuai dengan filter.
 
 #### Tangkapan Layar Hasil Pengujian
-![Hasil Pengujian](/images/UnitTesting.PNG)
+![Hasil Pengujian](images/UnitTesting.PNG)

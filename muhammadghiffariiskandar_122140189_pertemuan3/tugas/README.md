@@ -1,82 +1,82 @@
-# Personal Book Management App
+# Aplikasi Manajemen Buku Pribadi
 
-A React application for managing your personal book collection, allowing you to track books you own, are reading, or want to purchase.
+Aplikasi React untuk mengelola koleksi buku pribadi Anda, memungkinkan untuk melacak buku yang Anda miliki, sedang dibaca, atau ingin dibeli.
 
-## Features
+## Fitur
 
-- Add new books with title, author, status, and optional notes
-- Edit and delete existing books
-- Filter books by status (owned, reading, want to buy)
-- Search through your collection by title or author
-- View statistics about your book collection
-- Data persists in your browser using localStorage
+- Tambah buku baru dengan judul, penulis, status, dan catatan opsional
+- Edit dan hapus buku yang ada
+- Filter buku berdasarkan status (dimiliki, sedang dibaca, ingin beli)
+- Cari koleksi berdasarkan judul atau penulis
+- Lihat statistik koleksi buku Anda
+- Data tersimpan di browser menggunakan localStorage
 
-## Screenshots
+## Tangkapan Layar
 
-![Home Page](/images/Home%20Page.PNG)
-*Home page showing the book collection*
+![Halaman Utama](/images/HomePage.PNG)
+*Halaman utama menampilkan koleksi buku*
 
-![Add Book Form](/images/Add%20Book%20Form.PNG)
-*Adding a new book to the collection*
+![Form Tambah Buku](/images/AddBookForm.PNG)
+*Menambahkan buku baru ke koleksi*
 
-![Statistics Page](/images/Statistik%20Page.PNG)
-*Statistics about your book collection*
+![Halaman Statistik](/images/StatistikPage.PNG)
+*Statistik tentang koleksi buku Anda*
 
-## Installation and Setup
+## Instalasi dan Pengaturan
 
-1. Clone the repository
+1. Klon repositori
 ```
-git clone https://github.com/yourusername/book-management-app.git
+git clone https://github.com/GhiffariIs/pemrograman_web_itera_122140189.git
 cd book-management-app
 ```
 
-2. Install dependencies
+2. Instal dependensi
 ```
 npm install
 ```
 
-3. Start the development server
+3. Jalankan server pengembangan
 ```
 npm run dev
 ```
 
-4. Open your browser and navigate to `http://localhost:5173`
+4. Buka browser dan akses `http://localhost:5173`
 
-## Technology Stack
+## Teknologi yang Digunakan
 
-- **React** - UI library
-- **React Router** - For navigation between pages
-- **Vite** - Build tool and development server
-- **LocalStorage API** - For client-side data persistence
+- **React** - Pustaka UI
+- **React Router** - Untuk navigasi antar halaman
+- **Vite** - Alat build dan server pengembangan
+- **LocalStorage API** - Untuk penyimpanan data sisi klien
 
-## React Features Used
+## Fitur React yang Digunakan
 
-### State Management
-- **useState** - For component-level state management
-- **useReducer** - For more complex state operations
-- **Context API** - For global state management across components
+### Manajemen State
+- **useState** - Untuk manajemen state tingkat komponen
+- **useReducer** - Untuk operasi state yang lebih kompleks
+- **Context API** - Untuk manajemen state global antar komponen
 
-### Effects and Lifecycle
-- **useEffect** - For side effects like localStorage synchronization
+### Efek dan Siklus Hidup
+- **useEffect** - Untuk efek samping seperti sinkronisasi localStorage
 
-### Custom Hooks
-- **useLocalStorage** - Custom hook for localStorage persistence
-- **useBookStats** - Custom hook for calculating book statistics
+### Hook Kustom
+- **useLocalStorage** - Hook kustom untuk persistensi localStorage
+- **useBookStats** - Hook kustom untuk menghitung statistik buku
 
 ### Routing
-- **React Router** - For navigation between Home and Stats pages
+- **React Router** - Untuk navigasi antara halaman Utama dan Statistik
 
-### Component Architecture
-- Reusable components for book items, forms, and lists
-- Proper component composition and props drilling avoidance
+### Arsitektur Komponen
+- Komponen yang dapat digunakan kembali untuk item buku, form, dan daftar
+- Komposisi komponen yang tepat dan menghindari props drilling
 
 ### PropTypes
-- Type checking for all component props
+- Pengecekan tipe untuk semua props komponen
 
-### Testing
-- Unit tests with React Testing Library
+### Pengujian
+- Uji unit dengan React Testing Library
 
-## Project Structure
+## Struktur Proyek
 
 ```
 src/
@@ -95,32 +95,27 @@ src/
 └── App.js
 ```
 
-## Testing
+## Pengujian
 
-Run the test suite with:
+Jalankan rangkaian pengujian dengan:
 
 ```
 npm test
 ```
 
-### Laporan Hasil Testing
+### Laporan Hasil Pengujian
 
 Berikut adalah hasil dari pengujian unit menggunakan Vitest dan React Testing Library:
 
-#### Contoh Hasil Test
+#### Contoh Hasil Pengujian
 - **Komponen BookForm**:
   - Validasi input berhasil dilakukan.
   - Fungsi `addBook` dan `editBook` dipanggil dengan data yang benar.
-  - Tombol "Cancel" berhasil menutup form.
+  - Tombol "Batal" berhasil menutup form.
 
 - **Komponen BookList**:
   - Filter berdasarkan status dan pencarian bekerja dengan benar.
-  - Pesan "No books found" muncul saat tidak ada buku yang sesuai dengan filter.
+  - Pesan "Tidak ada buku ditemukan" muncul saat tidak ada buku yang sesuai dengan filter.
 
-#### Screenshots Hasil Test
-![Hasil Test](https://via.placeholder.com/800x450)
-*Screenshot hasil pengujian unit test menggunakan Vitest*
-
-## License
-
-MIT
+#### Tangkapan Layar Hasil Pengujian
+![Hasil Pengujian](/images/UnitTesting.PNG)

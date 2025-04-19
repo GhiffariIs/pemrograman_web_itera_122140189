@@ -1,23 +1,29 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { BookProvider } from './context/BookContext'
-import Home from './pages/Home/Home'
-import Stats from './pages/Stats/Stats'
-import Layout from './components/Layout/Layout'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BookProvider } from './context/BookContext';
+import HomePage from './pages/Home/HomePage';
+import StatsPage from './pages/Stats/StatsPage';
+import Navbar from './components/Navbar/Navbar';
+import './App.css';
 
 function App() {
   return (
     <BookProvider>
       <Router>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/stats" element={<Stats />} />
-          </Routes>
-        </Layout>
+        <div className="app-container">
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/stats" element={<StatsPage />} />
+            </Routes>
+          </main>
+          <footer className="footer">
+            <p>© {new Date().getFullYear()} Personal Book Management App</p>
+          </footer>
+        </div>
       </Router>
     </BookProvider>
-  )
+  );
 }
 
-export default App
+export default App;

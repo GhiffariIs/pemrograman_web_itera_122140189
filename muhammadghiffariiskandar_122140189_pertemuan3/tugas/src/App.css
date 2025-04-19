@@ -1,43 +1,106 @@
 :root {
   --primary-color: #3498db;
-  --primary-hover: #2980b9;
+  --primary-dark: #2980b9;
+  --primary-light: #e3f2fd;
   --text-color: #333;
-  --bg-color: #f5f5f5;
-  --card-bg: #fff;
-  --border-color: #ddd;
-  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-[data-theme="dark"] {
-  --primary-color: #3498db;
-  --primary-hover: #2980b9;
-  --text-color: #f5f5f5;
-  --bg-color: #121212;
-  --card-bg: #1e1e1e;
-  --border-color: #333;
-  --shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --light-gray: #f5f5f5;
+  --gray: #e0e0e0;
+  --dark-gray: #757575;
+  --status-owned: #4caf50;
+  --status-reading: #ff9800;
+  --status-to-buy: #9c27b0;
+  --danger: #e74c3c;
+  --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
 }
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  transition: background-color 0.3s, color 0.3s;
 }
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
   line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--light-gray);
 }
 
 button {
   cursor: pointer;
+  font-family: inherit;
 }
 
-.container {
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+  color: var(--dark-gray);
+  font-size: 0.85rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+  background-color: var(--gray);
+  color: var(--text-color);
+  border: none;
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: var(--dark-gray);
+  color: white;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

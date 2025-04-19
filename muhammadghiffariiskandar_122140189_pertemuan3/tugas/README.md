@@ -1,62 +1,126 @@
-# React + Vite
+# Personal Book Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-
-# Personal Book Management Application
-
-A React application for managing your personal book collection, tracking books you own, are currently reading, or want to buy.
+A React application for managing your personal book collection, allowing you to track books you own, are reading, or want to purchase.
 
 ## Features
 
-- Add, edit, and delete books
-- Filter books by status (owned, reading, wishlist)
-- Search books by title or author
-- View statistics about your collection
-- Light and dark mode toggle
-- Data persistence with localStorage
-
-## Technologies Used
-
-- React with Hooks (useState, useEffect, useContext)
-- React Router for navigation
-- Context API for state management
-- PropTypes for type checking
-- Custom hooks (useLocalStorage, useBookStats)
-- Vite.js for fast development
-- CSS variables for theming
-
-## Installation
-
-1. Clone the repository
-2. Install dependencies: `npm install`
-3. Run the development server: `npm run dev`
-4. Open your browser to `http://localhost:3000`
-
-## Testing
-
-To run tests:
-`npm run test`
+- Add new books with title, author, status, and optional notes
+- Edit and delete existing books
+- Filter books by status (owned, reading, want to buy)
+- Search through your collection by title or author
+- View statistics about your book collection
+- Data persists in your browser using localStorage
 
 ## Screenshots
 
-![Home Page Light Mode](/screenshots/home-light.png)
-![Home Page Dark Mode](/screenshots/home-dark.png)
-![Stats Page](/screenshots/stats.png)
+![Home Page](/images/Home%20Page.PNG)
+*Home page showing the book collection*
+
+![Add Book Form](/images/Add%20Book%20Form.PNG)
+*Adding a new book to the collection*
+
+![Statistics Page](/images/Statistik%20Page.PNG)
+*Statistics about your book collection*
+
+## Installation and Setup
+
+1. Clone the repository
+```
+git clone https://github.com/yourusername/book-management-app.git
+cd book-management-app
+```
+
+2. Install dependencies
+```
+npm install
+```
+
+3. Start the development server
+```
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+## Technology Stack
+
+- **React** - UI library
+- **React Router** - For navigation between pages
+- **Vite** - Build tool and development server
+- **LocalStorage API** - For client-side data persistence
 
 ## React Features Used
 
-- **useState/useEffect**: For managing component state and side effects
-- **Context API**: For global state management of books and theme
-- **React Router**: For multi-page navigation
-- **Custom Hooks**: useLocalStorage for persistence, useBookStats for derived data
-- **PropTypes**: For component prop validation
-- **React Testing Library**: For unit testing components and hooks
+### State Management
+- **useState** - For component-level state management
+- **useReducer** - For more complex state operations
+- **Context API** - For global state management across components
+
+### Effects and Lifecycle
+- **useEffect** - For side effects like localStorage synchronization
+
+### Custom Hooks
+- **useLocalStorage** - Custom hook for localStorage persistence
+- **useBookStats** - Custom hook for calculating book statistics
+
+### Routing
+- **React Router** - For navigation between Home and Stats pages
+
+### Component Architecture
+- Reusable components for book items, forms, and lists
+- Proper component composition and props drilling avoidance
+
+### PropTypes
+- Type checking for all component props
+
+### Testing
+- Unit tests with React Testing Library
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── BookForm/
+│   ├── BookList/
+│   └── Navbar/
+├── pages/
+│   ├── Home/
+│   └── Stats/
+├── hooks/
+│   ├── useLocalStorage.js
+│   └── useBookStats.js
+├── context/
+│   └── BookContext.js
+└── App.js
+```
+
+## Testing
+
+Run the test suite with:
+
+```
+npm test
+```
+
+### Laporan Hasil Testing
+
+Berikut adalah hasil dari pengujian unit menggunakan Vitest dan React Testing Library:
+
+#### Contoh Hasil Test
+- **Komponen BookForm**:
+  - Validasi input berhasil dilakukan.
+  - Fungsi `addBook` dan `editBook` dipanggil dengan data yang benar.
+  - Tombol "Cancel" berhasil menutup form.
+
+- **Komponen BookList**:
+  - Filter berdasarkan status dan pencarian bekerja dengan benar.
+  - Pesan "No books found" muncul saat tidak ada buku yang sesuai dengan filter.
+
+#### Screenshots Hasil Test
+![Hasil Test](https://via.placeholder.com/800x450)
+*Screenshot hasil pengujian unit test menggunakan Vitest*
+
+## License
+
+MIT

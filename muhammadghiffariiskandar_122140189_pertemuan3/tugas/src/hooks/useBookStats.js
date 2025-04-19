@@ -1,20 +1,44 @@
-import { useMemo } from 'react'
+// hooks/useBookStats.js
+import { useMemo } from 'react';
+import { useBookContext } from '../context/BookContext';
 
-export function useBookStats(books) {
-  return useMemo(() => {
-    const totalBooks = books.length
-    const ownedBooks = books.filter(book => book.status === 'owned').length
-    const readingBooks = books.filter(book => book.status === 'reading').length
-    const wishlistBooks = books.filter(book => book.status === 'wishlist').length
+const useBookStats = () => {
+  const { books } = useBookContext();
+  
+  const stats = useMemo(() => {
+    const owned = books.filter(book => book.status === 'owned').length;
+    const reading = books.filter(book => book.status === 'reading').length;
+    const toBuy = books.filter(book => book.status === 'toBuy').length;
+    
+    // Get authors count
+    const authors = new Set(books.map(book => book.author));
+    
+    // Most frequent author
+    const authorCount = {};
+    books.forEach(book => {
+      authorCount[book.author] = (authorCount[book.author] || 0) + 1;
+    });
+    
+    let mostFrequentAuthor = { name: '', count: 0 };
+    Object.entries(authorCount).forEach(([author, count]) => {
+      if (count > mostFrequentAuthor.count) {
+        mostFrequentAuthor = { name: author, count };
+      }
+    });
 
     return {
-      totalBooks,
-      ownedBooks,
-      readingBooks,
-      wishlistBooks,
-      ownedPercentage: totalBooks ? Math.round((ownedBooks / totalBooks) * 100) : 0,
-      readingPercentage: totalBooks ? Math.round((readingBooks / totalBooks) * 100) : 0,
-      wishlistPercentage: totalBooks ? Math.round((wishlistBooks / totalBooks) * 100) : 0
-    }
-  }, [books])
-}
+      total: books.length,
+      owned,
+      reading,
+      toBuy,
+      uniqueAuthors: authors.size,
+      mostFrequentAuthor: mostFrequentAuthor.name 
+        ? `${mostFrequentAuthor.name} (${mostFrequentAuthor.count})` 
+        : 'None'
+    };
+  }, [books]);
+  
+  return stats;
+};
+
+export default useBookStats;

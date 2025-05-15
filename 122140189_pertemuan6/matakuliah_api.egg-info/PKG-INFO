@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: matakuliah_api
+Version: 0.0.0
+Requires-Dist: pyramid
+Requires-Dist: pyramid_tm
+Requires-Dist: SQLAlchemy
+Requires-Dist: transaction
+Requires-Dist: zope.sqlalchemy
+Requires-Dist: waitress
+Dynamic: requires-dist
